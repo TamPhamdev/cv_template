@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>CV</title>
+  <style>
+    @media all {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .cv_template .page-break {
+        display: none;
+      }
+
+
+    }
+
+    @media screen {
+      .cv_template .left-col {
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: #24142c;
+        color: #fff;
+      }
+    }
+
+    @page {
+      size: A4 portrait;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin: 0;
+      -webkit-print-color-adjust: exact;
+    }
+
+    @media print {
+
+     
+      .cv_template .left-col {
+        /* height: 100%; */
+        top: 0;
+        left: 0;
+        position: fixed !important;
+        background-color: #24142c;
+        color: #fff;
+      }
+
+
+
+
+      /* .cv_template .page-break {
+        display: block;
+        page-break-before: always;
+      } */
+      /*
+      .cv_template .page-break {
+        display: block;
+        page-break-after: always;
+      } */
+    }
+
+    /* End print  */
+    .cv_template ul>li {
+      list-style: none;
+    }
+
+    .cv_template h3,
+    .cv_template p {
+      margin: 0;
+    }
+
+    .cv_template .container {
+      display: block;
+      width: 100%;
+    }
+
+    .cv_template .row {
+      display: block;
+      width: 100%;
+    }
+
+    .cv_template .col-10 {
+      display: inline-block;
+      width: 83.333333%;
+    }
+
+    .cv_template .position-relative {
+      position: relative;
+    }
+
+    .cv_template .position-absolute {
+      position: absolute;
+    }
+
+    .cv_template .float-right {
+      float: right;
+    }
+
+    .cv_template .float-left {
+      float: left;
+    }
+
+    .cv_template .col-11 {
+      display: inline-block;
+      width: 91.666667%;
+    }
+
+    .cv_template .col-9 {
+      display: inline-block;
+      width: 75%;
+    }
+
+    .cv_template .col-8 {
+      display: inline-block;
+      width: 66.666667%;
+    }
+
+    .cv_template .col-4 {
+      display: inline-block;
+      width: 33.333333%;
+    }
+
+    .cv_template .col-3 {
+      display: inline-block;
+      width: 25%;
+    }
+
+    .cv_template .col-6 {
+      display: inline-block;
+      width: 50%;
+    }
+
+    .cv_template .col-12 {
+      display: inline-block;
+      /* height: auto;
+      table-layout: auto; */
+      width: 100%;
+    }
+
+    .cv_template .mv-10 {
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    .cv_template .pv-10 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .cv_template .d-flex {
+      display: table;
+    }
+
+    .cv_template .line-height-25 {
+      line-height: 30px;
+    }
+
+    .cv_template .justify-center {
+      text-align: center;
+    }
+
+    .cv_template .align-center {
+      align-items: center;
+    }
+
+    .cv_template .right-col {
+      margin-left: 33.333333%;
+    }
+
+
+    .cv_template .right-col {
+      background-color: #fff;
+    }
+
+    .cv_template .text-uppercase {
+      text-transform: uppercase;
+    }
+
+    .cv_template .right-col .header-wrapper {
+      margin: 0 40px 40px 40px;
+      text-align: center;
+    }
+
+    .cv_template .right-col .header-wrapper .header-name {
+      text-transform: uppercase;
+      border-bottom: 20px solid #f5b83b;
+      letter-spacing: 5px;
+    }
+
+    .cv_template .job-exp-wrapper {
+      padding: 0 40px;
+    }
+
+    .cv_template .title-section {
+      font-size: 2.5rem;
+      color: #412784;
+      padding-bottom: 10px;
+      letter-spacing: 5px;
+    }
+
+
+
+    .cv_template .parent-left-col {
+      /* background-color: #24142c;
+      position: fixed; */
+    }
+
+    /* .cv_template .profile-wrapper {
+      position: relative;
+      height: 100%;
+      padding: 40px 20px 15px 20px;
+    } */
+
+    .cv_template .slogan-jojobee {
+      padding-left: 20px;
+      color: #f5b83b;
+    }
+
+    .cv_template .title-jojobee {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .cv_template .avatar-profile {
+      width: 100%;
+    }
+
+    .cv_template .width-100 {
+      width: 100%;
+    }
+
+    .cv_template ul {
+      padding: 0 20px;
+      margin: 0;
+    }
+
+    .cv_template .title {
+      padding-left: 20px;
+      letter-spacing: 5px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #f5b83b;
+      margin-bottom: 10px;
+    }
+
+    .cv_template .cv__template__logo_link {
+      max-width: 100%;
+    }
+
+    .cv_template .cv__template__logo-jojobee {
+      width: 100%;
+    }
+
+    .cv_template .skill-info {
+      margin-top: 10px;
+    }
+
+    .cv_template .header-address {
+      margin: 20px 0;
+    }
+
+    .cv_template .header-address>p {
+      font-size: 1.2rem;
+      line-height: 25px;
+      color: #6c757d;
+    }
+
+    .cv_template .job-content {
+      margin-bottom: 40px;
+    }
+
+    .cv_template .sub-title {
+      line-height: 30px;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: darkgray;
+    }
+
+    .cv_template .company-title {
+      font-size: 1.2rem;
+      color: dimgrey;
+      line-height: 25px;
+      padding-bottom: 15px;
+    }
+
+    .cv_template .description {
+      color: lightslategrey;
+    }
+
+    .cv_template .education-wrapper {
+      padding: 0 40px;
+    }
+
+    .cv_template .logo-store-wrapper {
+
+      position: absolute;
+      bottom: 0;
+    }
+
+    .cv_template .logo-store {
+      position: fixed;
+      margin: 0 auto;
+      display: inline-block;
+    }
+
+    .cv_template .clear-both {
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cv_template">
+    <div class="row">
+      <div class="col-12" style=" background-color: #24142c; ">
+
+
+        <!-- Left columns -->
+        <div class="col-4 left-col" style="height: 100%;">
+          <div class="row ">
+            <div class="header-print">
+              <div class=" align-center pv-10 width-100">
+                <a class="cv__template__logo_link" href="https://www.jojobee.ph">
+                  <img src="Jojobee logo_white.svg" alt="Logo" class="cv__template__logo-jojobee" />
+                </a>
+              </div>
+              <p class="slogan-jojobee text-uppercase mv-10">
+                super <i>faaaaaaast</i> hiring!
+              </p>
+            </div>
+            <img src="Jojobee logo_white.svg" alt="" class="avatar-profile" />
+          </div>
+          <!-- End row -->
+          <!-- Start row -->
+          <div class="row">
+            <!-- Start profile info -->
+            <div class="profile-info">
+              <p class="title">Profile</p>
+              <div class="container">
+                <div class="row">
+                  <!-- Start col 6 profile -->
+                  <div class="col-6 float-left">
+                    <ul>
+                      <li class="line-height-25 ">Gender</li>
+                      <li class="line-height-25 ">Birthday</li>
+                      <li class="line-height-25 ">Age</li>
+                      <li class="line-height-25 ">Experience</li>
+                    </ul>
+                  </div>
+                  <!-- End col 6 profile -->
+                  <div class="col-6 float-left">
+                    <ul>
+                      <li class="line-height-25 ">:Female</li>
+                      <li class="line-height-25 ">:1-1-1996</li>
+                      <li class="line-height-25 ">:33</li>
+                      <li class="line-height-25 ">:9 years</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End profile info -->
+          </div>
+          <div class="clear-both"></div>
+          <!-- <div class="page-break"></div> -->
+          <div class="row">
+            <!-- Start row -->
+            <!-- Start skill info -->
+            <div class="skill-info">
+              <p class="title">Skills</p>
+              <div class="container">
+                <div class="row">
+                  <!-- Start col 6 profile -->
+                  <div class="col-12">
+                    <ul>
+                      <li class="line-height-25 ">Graphic Design</li>
+                      <li class="line-height-25 ">Web develop</li>
+                      <li class="line-height-25 ">Lorem isum</li>
+                      <li class="line-height-25 ">Lorem isum</li>
+                    </ul>
+                  </div>
+                  <!-- End col 6 profile -->
+                </div>
+              </div>
+            </div>
+            <!-- <div class="page-break"></div> -->
+            <!-- End skill info -->
+          </div>
+          <!-- End row here-->
+
+
+        </div>
+        <!-- End left columns -->
+
+
+        <!-- Right columns -->
+        <div class="col-8 right-col">
+          <!-- Start header info  -->
+          <div class="header-wrapper">
+            <div class="header">
+              <h2 class="header-name">Austin wayne bronson</h2>
+            </div>
+            <div class="header-address">
+              <p>4710 Bus Boulevard, Flistore, GA 30725</p>
+              <p>Email: contact@gmail.com</p>
+            </div>
+          </div>
+          <!-- End header info -->
+
+          <!-- Start job experience -->
+          <div class="job-exp-wrapper">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h3 class="title-section">Job Experience</h3>
+                  <div class="job-content">
+                    <p class="sub-title">general manager (2006 - Now)</p>
+                    <p class="company-title">High Ground</p>
+                    <p class="description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing
+                      elit. Optio alias libero eum accusamus illo, nisi
+                      aliquid quae facilis voluptatibus, illum velit ut
+                      nesciunt quidem fugiat reprehenderit expedita. Autem,
+                      labore magni?
+                    </p>
+                  </div>
+                  <div class="job-content">
+                    <p class="sub-title">general manager (2006 - Now)</p>
+                    <p class="company-title">High Ground</p>
+                    <p class="description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing
+                      elit. Optio alias libero eum accusamus illo, nisi
+                      aliquid quae facilis voluptatibus, illum velit ut
+                      nesciunt quidem fugiat reprehenderit expedita. Autem,
+                      labore magni?
+                    </p>
+                  </div>
+                  <div class="job-content">
+                    <p class="sub-title">general manager (2006 - Now)</p>
+                    <p class="company-title">High Ground</p>
+                    <p class="description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing
+                      elit. Optio alias libero eum accusamus illo, nisi
+                      aliquid quae facilis voluptatibus, illum velit ut
+                      nesciunt quidem fugiat reprehenderit expedita. Autem,
+                      labore magni?
+                    </p>
+                  </div>
+                  <div class="page-break"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-break"></div>
+          <!-- End job experience -->
+          <div class="education-wrapper">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h3 class="title-section">Education</h3>
+                  <div class="job-content">
+                    <p class="sub-title">general manager (2006 - Now)</p>
+                    <p class="company-title">High Ground</p>
+                    <p class="description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing
+                      elit. Optio alias libero eum accusamus illo, nisi
+                      aliquid quae facilis voluptatibus, illum velit ut
+                      nesciunt quidem fugiat reprehenderit expedita. Autem,
+                      labore magni?
+                    </p>
+                  </div>
+                  <div class="page-break"></div>
+                  <div class="job-content">
+                    <p class="sub-title">general manager (2006 - Now)</p>
+                    <p class="company-title">High Ground</p>
+                    <p class="description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing
+                      elit. Optio alias libero eum accusamus illo, nisi
+                      aliquid quae facilis voluptatibus, illum velit ut
+                      nesciunt quidem fugiat reprehenderit expedita. Autem,
+                      labore magni?
+                    </p>
+                  </div>
+                  <div class="page-break"></div>
+                  <div class="job-content">
+                    <p class="sub-title">general manager (2006 - Now)</p>
+                    <p class="company-title">High Ground</p>
+                    <p class="description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing
+                      elit. Optio alias libero eum accusamus illo, nisi
+                      aliquid quae facilis voluptatibus, illum velit ut
+                      nesciunt quidem fugiat reprehenderit expedita. Autem,
+                      labore magni?
+                    </p>
+                  </div>
+                  <div class="job-content">
+                    <p class="sub-title">general manager (2006 - Now)</p>
+                    <p class="company-title">High Ground</p>
+                    <p class="description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing
+                      elit. Optio alias libero eum accusamus illo, nisi
+                      aliquid quae facilis voluptatibus, illum velit ut
+                      nesciunt quidem fugiat reprehenderit expedita. Autem,
+                      labore magni?
+                    </p>
+                  </div>
+                  <div class="page-break"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End right columns -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
